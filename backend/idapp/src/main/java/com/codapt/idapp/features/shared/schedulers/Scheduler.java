@@ -1,9 +1,9 @@
 package com.codapt.idapp.features.shared.schedulers;
 
-import java.time.LocalDate;
+import com.codapt.idapp.features.shared.dto.BookingDayDTO;
 
 public interface Scheduler {
     
-    public LocalDate generateDay();
+    public BookingDayDTO generateDay();
 
 }
