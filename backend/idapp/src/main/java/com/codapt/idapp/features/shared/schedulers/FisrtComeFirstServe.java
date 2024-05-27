@@ -27,7 +27,8 @@ public class FisrtComeFirstServe implements Scheduler {
             allBookings = bookingsRepo.findByDate(firstDay);
         }
 
-        int count = allBookings.size();
+        int count = allBookings.size() + 1;
+
         BookingDayDTO bookingDay = new BookingDayDTO();
 
         bookingDay.setDate(firstDay);
