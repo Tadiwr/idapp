@@ -1,5 +1,7 @@
 package com.codapt.idapp.features.offices;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +19,14 @@ public class OfficeService {
         newOffice.setOfficeName(office.getName());
         newOffice.setShortName(office.getShortName()); 
         return repo.save(newOffice);
-        
+    }
+
+    public Optional<Office> getOfficeById(Long id) {
+        return repo.findById(id);
+    }
+
+    public Optional<Office> getOfficeById(int id) {
+        return repo.findById(1L * id);
     }
 
 }
