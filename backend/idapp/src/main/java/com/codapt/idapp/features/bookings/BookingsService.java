@@ -1,6 +1,8 @@
 package com.codapt.idapp.features.bookings;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,6 +54,18 @@ public class BookingsService {
 
     public List<Booking> getAll() {
         return (List<Booking>) repo.findAll();
+    }
+
+    public List<Booking> getAllForOffice(int id) {
+
+        Optional<Office> officeOptional = officeService.getOfficeById(id);
+
+        if (officeOptional.isPresent()) {
+            return (List<Booking>) repo.findByOffice(officeOptional.get());
+        } else {
+            return new ArrayList<>();
+        }
+
     }
 
 

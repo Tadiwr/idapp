@@ -11,6 +11,7 @@ public interface BookingRepository extends CrudRepository<Booking, Long> {
     
     public List<Booking> findByDate(LocalDate date); 
     public List<Booking> findByDateAndOffice(LocalDate date, Office office); 
+    public List<Booking> findByOffice(Office office);
 
 
 
