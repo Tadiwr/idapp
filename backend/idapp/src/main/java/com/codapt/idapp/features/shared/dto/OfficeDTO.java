@@ -7,5 +7,6 @@ public class OfficeDTO {
     
     private String shortName;
     private String name;
+    private int capacity;
 
 }

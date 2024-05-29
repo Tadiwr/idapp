@@ -31,9 +31,9 @@ public class BookingsService {
     public Booking make(BookingsDTO booking) {
 
         Booking newBooking = new Booking();
-        BookingDayDTO bookingDay = schedueler.generateDay();
-
+        
         Office office = officeService.getOfficeById(booking.getOfficeId()).get();
+        BookingDayDTO bookingDay = schedueler.generateDay(office);
         
         newBooking.setFirstName(booking.getFirstName());
         newBooking.setLastName(booking.getLastName());

@@ -38,6 +38,9 @@ public class Booking {
     @Column
     private LocalDate date;
 
+    @Column
+    private Boolean idRegistered = false;
+
     @ManyToOne
     @JoinColumn(name = "office_id")
     private Office office; 

@@ -18,6 +18,7 @@ public class OfficeService {
 
         newOffice.setOfficeName(office.getName());
         newOffice.setShortName(office.getShortName()); 
+        newOffice.setCapacity(office.getCapacity());
         return repo.save(newOffice);
     }
 

@@ -30,6 +30,9 @@ public class Office {
     @Column
     private String shortName;
 
+    @Column
+    private int capacity = 500;
+
     @JsonIgnore
     @OneToMany(mappedBy = "office")
     private List<Booking> bookings;

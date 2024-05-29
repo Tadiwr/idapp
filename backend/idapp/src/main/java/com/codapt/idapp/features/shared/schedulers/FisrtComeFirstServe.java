@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.codapt.idapp.features.bookings.BookingRepository;
+import com.codapt.idapp.features.offices.Office;
 import com.codapt.idapp.features.shared.dto.BookingDayDTO;
 import com.codapt.idapp.features.bookings.Booking;
 
@@ -17,15 +18,14 @@ public class FisrtComeFirstServe implements Scheduler {
     private BookingRepository bookingsRepo;
 
     @Override
-    public BookingDayDTO generateDay() {
+    public BookingDayDTO generateDay(Office office) {
 
         LocalDate firstDay = LocalDate.now().plusDays(1);
-        List<Booking> allBookings = bookingsRepo.findByDate(firstDay);
-        int dailyCapacity = 50;
+        List<Booking> allBookings = bookingsRepo.findByDateAndOffice(firstDay, office);
 
-        while (allBookings.size() == dailyCapacity) {
+        while (allBookings.size() == office.getCapacity()) {
             firstDay = firstDay.plusDays(1);
-            allBookings = bookingsRepo.findByDate(firstDay);
+            allBookings = bookingsRepo.findByDateAndOffice(firstDay, office);
         }
 
         int count = allBookings.size() + 1;
