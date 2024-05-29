@@ -1,6 +1,7 @@
 package com.codapt.idapp.features.bookings;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -48,6 +49,16 @@ public class BookingController {
         return ResponseEntity.ok(service.verifyBooking(dto.getBookingCode()));
     }
     
+    @GetMapping("/{id}")
+    public ResponseEntity<Booking> getSingleBookingById(@PathVariable(name="id") int bookingId) {
+        Optional<Booking> booking = service.getById(bookingId);
+
+        if (booking.isPresent()) {
+            return ResponseEntity.ok(booking.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
     
 
 }

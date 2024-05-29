@@ -80,5 +80,9 @@ public class BookingsService {
         return res;
     }
 
+    public Optional<Booking> getById(int id) {
+        return repo.findById(1L * id);
+    }
+
 
 }
