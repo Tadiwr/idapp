@@ -1,5 +1,7 @@
 package com.codapt.idapp.features.bookings;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +48,10 @@ public class BookingsService {
         
         return repo.save(newBooking);
 
+    }
+
+    public List<Booking> getAll() {
+        return (List<Booking>) repo.findAll();
     }
 
 
