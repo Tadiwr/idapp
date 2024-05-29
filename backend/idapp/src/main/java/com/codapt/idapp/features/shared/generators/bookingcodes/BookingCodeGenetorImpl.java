@@ -10,9 +10,19 @@ public class BookingCodeGenetorImpl implements BookingCodeGenerator {
 
     @Override
     public String generateCode(Booking booking, int count) {
-        String cityCode = "" + booking.getOfficeId();
+        String cityCode = "" + booking.getOffice().getShortName();
         String day = "" + booking.getDate().getDayOfMonth();
+
+        if (day.length() == 1) {
+            day = "0" + day;
+        }
+
         String month = "" + booking.getDate().getMonthValue();
+
+        if (month.length() == 1) {
+            month = "0" + month;
+        }
+
         String year = "" + booking.getDate().getYear();
         String countHex = new HexUtil().toHex(count);
         

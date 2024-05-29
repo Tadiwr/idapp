@@ -21,8 +21,9 @@ public class FisrtComeFirstServe implements Scheduler {
 
         LocalDate firstDay = LocalDate.now().plusDays(1);
         List<Booking> allBookings = bookingsRepo.findByDate(firstDay);
-        
-        while (allBookings.size() == 10) {
+        int dailyCapacity = 50;
+
+        while (allBookings.size() == dailyCapacity) {
             firstDay = firstDay.plusDays(1);
             allBookings = bookingsRepo.findByDate(firstDay);
         }
