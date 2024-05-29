@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codapt.idapp.features.shared.dto.BookingsDTO;
+import com.codapt.idapp.features.shared.dto.VerifyBookingDTO;
+import com.codapt.idapp.features.shared.dto.VerifyBookingResDTO;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,10 +38,16 @@ public class BookingController {
         return ResponseEntity.ok(service.getAll());
     }
 
-    @GetMapping("all/office/{id}")
+    @GetMapping("/all/office/{id}")
     public ResponseEntity<List<Booking>> getAllForOffice(@PathVariable(name="id") int officeId) {
         return ResponseEntity.ok(service.getAllForOffice(officeId));
     }
+
+    @PostMapping("/verify")
+    public ResponseEntity<VerifyBookingResDTO> verifyBooking(@RequestBody VerifyBookingDTO dto) {
+        return ResponseEntity.ok(service.verifyBooking(dto.getBookingCode()));
+    }
+    
     
 
 }

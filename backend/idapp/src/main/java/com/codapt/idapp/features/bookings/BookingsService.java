@@ -11,6 +11,8 @@ import com.codapt.idapp.features.offices.Office;
 import com.codapt.idapp.features.offices.OfficeService;
 import com.codapt.idapp.features.shared.dto.BookingDayDTO;
 import com.codapt.idapp.features.shared.dto.BookingsDTO;
+import com.codapt.idapp.features.shared.dto.VerifyBookingDTO;
+import com.codapt.idapp.features.shared.dto.VerifyBookingResDTO;
 import com.codapt.idapp.features.shared.generators.bookingcodes.BookingCodeGenerator;
 import com.codapt.idapp.features.shared.schedulers.FisrtComeFirstServe;
 
@@ -66,6 +68,16 @@ public class BookingsService {
             return new ArrayList<>();
         }
 
+    }
+
+    public VerifyBookingResDTO verifyBooking(String bookingCode) {
+        Optional<Booking> booking = repo.findByCode(bookingCode);
+        VerifyBookingResDTO res = new VerifyBookingResDTO();
+
+        res.setBooking(booking);
+        res.setIsValid(booking.isPresent());
+
+        return res;
     }
 
 
