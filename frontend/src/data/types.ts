@@ -4,3 +4,22 @@ export type Office = {
     capacity: number,
     id: number
 }
+
+export type MakeBookingDTO = {
+    officeId : number,
+    firstName : string,
+    lastName : string,
+    phoneNumber : string
+}
+
+export type Booking = MakeBookingDTO & {
+    date: Date,
+    idRegistered: boolean,
+    office: Office
+    id: number
+}
+
+export type GetBookingInfoResult = {
+    booking: Booking
+    isValid: boolean
+  }

@@ -1,12 +1,10 @@
 import { Office } from "./types";
-import { getIpAddress as getServerAddress } from "./utils";
+import { getOfficesApiBaseUrl} from "./utils";
 
-const serverAddress = getServerAddress();
-const baseUrl = `${serverAddress}/api/offices`
 
 export async function getOffices() : Promise<Office[]> {
+    const baseUrl = getOfficesApiBaseUrl()
     const reqUrl = `${baseUrl}/all`;
-
     const res = await fetch(reqUrl);
 
     return await res.json() as Office[];
