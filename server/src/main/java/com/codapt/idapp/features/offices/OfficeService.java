@@ -32,6 +32,6 @@ public class OfficeService {
     }
 
     public List<Office> getAll() {
-        return repo.findAll();
+        return  (List<Office>) repo.findAll();
     }
 }
