@@ -1,5 +1,6 @@
 package com.codapt.idapp.features.offices;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +31,7 @@ public class OfficeService {
         return repo.findById(1L * id);
     }
 
+    public List<Office> getAll() {
+        return repo.findAll();
+    }
 }

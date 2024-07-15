@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("/offices")
+@RequestMapping("api/offices")
 public class OfficesController {
 
     @Autowired
@@ -20,6 +20,11 @@ public class OfficesController {
     @PostMapping("/add")
     public Office addOffice(@RequestBody OfficeDTO office) {
         return service.addOffice(office);
+    }
+
+    @GetMapping("/all")
+    public List<Office> getAll() {
+        return service.getAll();
     }
     
     
