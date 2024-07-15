@@ -14,17 +14,17 @@ export default function BookingSideBar({officeFlag, detailsFlag, confirmFlag} : 
 
         <div className='flex flex-row my-2' >
             <CheckBox check={officeFlag} />
-            <p>Select Office</p>
+            <p className='font-medium text-lg' >Select Office</p>
         </div>
 
         <div className='flex flex-row my-2' >
             <CheckBox check={detailsFlag} />
-            <h1>Enter Details</h1>
+            <h1 className='font-medium text-lg' >Enter Details</h1>
         </div>
 
         <div className='flex flex-row my-2' >
             <CheckBox check={confirmFlag} />
-            <h1>Confirm Booking</h1>
+            <h1 className='font-medium text-lg' >Confirm Booking</h1>
         </div>
 
         
