@@ -3,14 +3,19 @@ import React from 'react'
 
 export default function BookingPage() {
   return (
-    <div className='flex p-10 w-full h-screen' >
+    <div className='flex p-10 w-full h-screen ' >
         {/* Sidebar */}
-        <div>
+        <div className='ml-4'>
             <BookingSideBar officeFlag={true} confirmFlag={false} detailsFlag={false} />
         </div>
-
         {/* Input Area */}
-        <div></div>
+        <div className=''>
+          <h1>Enter Your Details</h1>
+          
+        </div>
+
     </div>
   )
 }
+
+
