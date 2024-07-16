@@ -1,5 +1,5 @@
 import BookingSideBar from '@/components/booking_side_bar'
-import SelectOffoces from '@/components/bookings_page/select_office'
+import SelectOffices from '@/components/bookings_page/select_office'
 import React from 'react'
 
 
@@ -12,7 +12,7 @@ export default function BookingPage() {
         </div>
         {/* Input Area */}
         <div className='h-screen overflow-scroll w-full' >
-        <SelectOffoces/>
+        <SelectOffices/>
         </div>
     </div>
   )
