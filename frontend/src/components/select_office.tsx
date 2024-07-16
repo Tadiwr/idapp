@@ -5,11 +5,11 @@ const OfficeList = async () => {
     const offices = await getOffices()
     
   return (
-    <div>{
-        offices.map((offic,index)=>{
-            return <div key={index}>{offic.officeName}</div>
-        })
-    }</div>
+    <div>
+      {offices.map((office, index) => {
+        return <div>{office.officeName}</div>
+      })}
+    </div>
   )
 }
 
