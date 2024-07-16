@@ -1,19 +1,15 @@
 import { getOffices } from "../../data/office.data";
+import OfficeCard from "../office_card";
 
-const SelectOffice = async () => {
+export default async function SelectOffice() {
 
-    const offices = await getOffices()
+  const offices = await getOffices()
+
   return (
-    <div className="grid grid-cols-1 px-5 gap-4">
-      {offices.map((office,index)=>{
-        return <div key={index} className="flex rounded-md w-full border p-5 flex-col">
-          <h1>{office.officeName}</h1>
-          <p><span>Max Capacity</span>{office.capacity}</p>
-          </div>
-      })}
+    <div>
+      {offices.map((office, index) => {
+        return <OfficeCard office={office} key={index} />
+      } )}
     </div>
-
   )
 }
-
-export default SelectOffice;
