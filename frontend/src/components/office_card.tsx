@@ -3,10 +3,11 @@ import { getOffices } from '../data/office.data'
 import { Office } from '@/data/types'
 
 type Props = {
-  office: Office
+  office: Office,
+  onSelectOffice : (officeId: number) => void
 }
 
-export default async function OfficeCard({office} : Props) {
+export default async function OfficeCard({office, onSelectOffice} : Props) {
   
   return (
     <div className='flex flex-col p-5 border rounded-2xl' >

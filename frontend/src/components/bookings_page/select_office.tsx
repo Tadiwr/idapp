@@ -3,17 +3,19 @@ import { getOffices } from "../../data/office.data";
 import OfficeCard from "../office_card";
 import FetchingOffices from "../suspense_falbacks/fetching_offices";
 
-export default async function SelectOffice() {
+type Props = {
+  onSelectOffice : (officeId: number) => void
+}
+
+export default async function SelectOffice({onSelectOffice} : Props) {
 
   const offices = await getOffices()
 
   return (
-    <Suspense fallback={<FetchingOffices/>} >
       <div className="grid-cols-1 px-5 grid gap-5" >
         {offices.map((office, index) => {
-          return <OfficeCard office={office} key={index} />
+          return <OfficeCard onSelectOffice={onSelectOffice} office={office} key={index} />
         } )}
       </div>
-    </Suspense>
   )
 }
