@@ -30,7 +30,7 @@ function extractDetails(formData : FormData) : MakeBookingDTO {
     return {
         officeId : officeId,
         firstName : formData.get("first_name")?.toString() ?? "",
-        lastName : formData.get("office_id")?.toString() ?? "",
+        lastName : formData.get("last_name")?.toString() ?? "",
         phoneNumber : formData.get("phone_number")?.toString() ?? "",
     }
 }
