@@ -27,8 +27,15 @@ public class BookingController {
     BookingsService service;
     
     @PostMapping("/make")
-    public Booking makeBooking(@RequestBody BookingsDTO booking) {
-        return service.make(booking);
+    public ResponseEntity<Booking> makeBooking(@RequestBody BookingsDTO booking) {
+
+        try {
+            return ResponseEntity.ok(service.make(booking));
+        } catch(Exception err) {
+            System.out.println(err);
+            return ResponseEntity.badRequest().build();
+        }
+
     }
 
     @GetMapping("/all")
