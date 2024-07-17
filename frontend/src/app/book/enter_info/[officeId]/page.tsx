@@ -1,3 +1,4 @@
+import FormButton from '@/components/form_button';
 import OfficeCard from '@/components/office_card';
 import { getOffice } from '@/data/office.data';
 import React from 'react'
@@ -20,7 +21,7 @@ export default async function EnterBookingInfo({ params }: Props) {
         <input type="text" name='first_name'  placeholder='First Name'/>
         <input type="text" name='last_name' placeholder='Last Name'/>
         <input type="tel" name='phone_number' placeholder='Phone Number'/>
-        <button type='submit' >Submit Booking</button>
+        <FormButton>Submit Booking</FormButton>
       </form>
     </div>
   )
