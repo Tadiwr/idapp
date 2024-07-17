@@ -12,11 +12,11 @@ export async function makeBooking(booking : MakeBookingDTO) : Promise<Booking> {
 
     const res = await fetch(reqUrl, {
         body: JSON.stringify(booking),
+        method : "POST",
         headers : {
             "Content-Type": "application/json",
             "Accept" : "application/json",
         },
-        method : "POST"
     });
 
     return await res.json() as Booking;
@@ -36,7 +36,12 @@ export async function getBookingInfo(bookingCode: string) : Promise<GetBookingIn
     const reqUrl = `${baseUrl}/verify`;
 
     const res = await fetch(reqUrl, {
-        body: JSON.stringify({bookingCode: bookingCode})
+        body: JSON.stringify({bookingCode: bookingCode}),
+        method : "POST",
+        headers : {
+            "Content-Type": "application/json",
+            "Accept" : "application/json",
+        },
     });
 
     return await res.json() as GetBookingInfoResult;
