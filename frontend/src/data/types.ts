@@ -16,7 +16,8 @@ export type Booking = MakeBookingDTO & {
     date: Date,
     idRegistered: boolean,
     office: Office
-    id: number
+    id: number,
+    code: string
 }
 
 export type GetBookingInfoResult = {

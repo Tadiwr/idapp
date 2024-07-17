@@ -11,7 +11,12 @@ export async function makeBooking(booking : MakeBookingDTO) : Promise<Booking> {
     const reqUrl = `${baseUrl}/make`;
 
     const res = await fetch(reqUrl, {
-        body: JSON.stringify(booking)
+        body: JSON.stringify(booking),
+        headers : {
+            "Content-Type": "application/json",
+            "Accept" : "application/json",
+        },
+        method : "POST"
     });
 
     return await res.json() as Booking;
