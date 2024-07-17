@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <div className="fixed w-full bg-white h-20 border-b flex justify-center items-center" >
-            <a href="/" className="text-slate-500 font-semibold text-lg hover:text-blue-400" >ID REGISTRATION BOOKING APP</a>
+            <a href="/" className="text-slate-500 font-semibold text-lg hover:text-purple-400" >ID REGISTRATION BOOKING APP</a>
         </div>
 
         <div className="pt-20" >

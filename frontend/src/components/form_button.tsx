@@ -13,6 +13,6 @@ export default function FormButton({children} : Props) {
 
     return (
 
-        <button type='submit'  className='hover:bg-black transition-all' aria-disabled={pending} disabled={pending} >{pending ? "Please Wait..." : "Submit Booking"}</button>
+        <button type='submit'  className='bg-purple-700 hover:bg-purple-900 transition-all translate-y-6 duration-100' aria-disabled={pending} disabled={pending} >{pending ? "Please Wait..." : "Submit Booking"}</button>
     )
 }

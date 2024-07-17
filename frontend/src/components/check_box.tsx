@@ -13,7 +13,7 @@ export default function CheckBox({check}: Props) {
 }
 
 function CheckedState() {
-    return <div className='w-full h-full bg-blue-500' ></div>
+    return <div className='w-full h-full bg-purple-500' ></div>
 }
 
 function UncheckedState() {
