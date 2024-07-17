@@ -13,6 +13,15 @@ export default async function EnterBookingInfo({ params }: Props) {
       <div>
         <OfficeCard office={office}/>
       </div>
+
+      <h1 className='text-4xl font-bold my-7' >Enter your details</h1>
+
+      <form className='grid grid-cols-1 gap-3 ' action="">
+        <input type="text" name='first_name'  placeholder='First Name'/>
+        <input type="text" name='last_name' placeholder='Last Name'/>
+        <input type="tel" name='phone_number' placeholder='Phone Number'/>
+        <button type='submit' >Submit Booking</button>
+      </form>
     </div>
   )
 }
