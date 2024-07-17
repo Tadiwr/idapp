@@ -4,7 +4,9 @@ import { Office } from '@/data/types'
 
 type Props = {
   office: Office,
-  onSelectOffice : (officeId: number) => void
+
+  /** deprecated */
+  onSelectOffice? : (officeId: number) => void
 }
 
 export default async function OfficeCard({office, onSelectOffice} : Props) {
