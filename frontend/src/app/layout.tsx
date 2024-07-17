@@ -16,7 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="overflow-y-hidden">{children}</body>
+      <body >
+        <div className="fixed w-full bg-white h-20 border-b flex justify-center items-center" >
+            <a href="/" className="text-slate-500 font-semibold text-lg hover:text-blue-400" >ID REGISTRATION BOOKING APP</a>
+        </div>
+
+        <div className="pt-20" >
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

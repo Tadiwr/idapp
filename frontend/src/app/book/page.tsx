@@ -14,7 +14,8 @@ export default function BookingPage() {
   }
 
   return (
-    <div className='w-full h-screen' >
+    <div className='w-full h-screen p-5' >
+      <h1 className='text-3xl font-bold' >Select Register Office </h1>
       <SelectOffices  onSelectOffice={onSelectOffice}/>
     </div>
   )
