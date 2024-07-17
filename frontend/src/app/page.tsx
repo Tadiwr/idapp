@@ -1,5 +1,4 @@
 import { InfoCard, InfoCardProps } from "@/components/info_card";
-import Image from "next/image";
 
 const info : InfoCardProps[] = [
   {
@@ -28,4 +27,5 @@ export default function Home() {
     </div>
   );
 }
+
 
