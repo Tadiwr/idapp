@@ -12,20 +12,20 @@ export default function BookingSideBar({officeFlag, detailsFlag, confirmFlag} : 
     <div className='flex p-10 border-r flex-col w-full h-full' >
         <h1 className='font-bold text-4xl mb-10' >ID Book App</h1>
 
-        <div className='flex flex-row my-2 justify-start items-center' >
+        <a href='/book' className='flex flex-row my-2 justify-start items-center' >
             <CheckBox check={officeFlag} />
             <p className='font-medium text-lg' >Select Office</p>
-        </div>
+        </a>
 
-        <div className='flex flex-row my-2 justify-start items-center' >
+        <a href='/book/enter_info' className='flex flex-row my-2 justify-start items-center' >
             <CheckBox check={detailsFlag} />
             <h1 className='font-medium text-lg' >Enter Details</h1>
-        </div>
+        </a>
 
-        <div className='flex flex-row my-2 justify-start items-center' >
+        <a className='flex flex-row my-2 justify-start items-center' >
             <CheckBox check={confirmFlag} />
             <h1 className='font-medium text-lg' >Confirm Booking</h1>
-        </div>
+        </a>
 
         
         

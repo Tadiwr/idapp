@@ -14,15 +14,8 @@ export default function BookingPage() {
   }
 
   return (
-    <div className='flex px-10 py-4 w-full h-screen ' >
-        {/* Sidebar */}
-        <div className='ml-4'>
-           
-        </div>
-        {/* Input Area */}
-        <div className='h-screen overflow-scroll w-full' >
-        <SelectOffices  onSelectOffice={onSelectOffice}/>
-        </div>
+    <div className='w-full h-screen' >
+      <SelectOffices  onSelectOffice={onSelectOffice}/>
     </div>
   )
 }

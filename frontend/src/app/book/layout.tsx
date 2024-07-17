@@ -8,11 +8,11 @@ type Props = {
 export default function BookingLayout({children} : Props) {
   return (
     <div className='flex flex-row h-screen' >
-        <div className='w-1/4 h-screen overflow-y' >
+        <aside className='fixed top-0 left-0 z-40 w-72 h-screen transition-transform -translate-x-full sm:translate-x-0' >
             <BookingSideBar officeFlag={true} confirmFlag={false} detailsFlag={false} />
-        </div>
+        </aside>
 
-        <div className='w-full h-screen overflow-y' >
+        <div className='p-4 sm:ml-72 w-full' >
             {children}
         </div>
     </div>
