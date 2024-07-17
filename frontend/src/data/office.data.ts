@@ -15,3 +15,11 @@ export async function getOffices() : Promise<Office[]>  {
         return [];
     }
 }
+
+export async function getOffice(officeId: number) {
+    const baseUrl = getOfficesApiBaseUrl()
+        const reqUrl = `${baseUrl}/${officeId}`;
+        const res = await fetch(reqUrl);
+
+        return await res.json() as Office;
+}
