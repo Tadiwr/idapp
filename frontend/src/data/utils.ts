@@ -30,3 +30,23 @@ export function getBookingsApiBaseUrl() : string {
 
     return baseUrl;
 }
+
+/** Takes a `Date` object as a parameter and returns it as a string in the form
+ * 
+ * `day day-number month year`
+ */
+export function formatDate(date: Date) {
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    const dayIndex = date.getDay();
+    const dayStr = daysOfWeek[dayIndex];
+
+    const dayOfMonth = date.getDate();
+
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const monthIndex = date.getMonth()
+    const monthStr = months[monthIndex]
+
+    const year = date.getFullYear();
+
+    return `${dayStr} ${dayOfMonth} ${monthStr} ${year}`;
+}
