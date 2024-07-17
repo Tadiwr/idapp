@@ -1,3 +1,4 @@
+import BookingForm from '@/components/bookings_page/booking_form';
 import FormButton from '@/components/form_button';
 import OfficeCard from '@/components/office_card';
 import { getOffice } from '@/data/office.data';
@@ -17,12 +18,7 @@ export default async function EnterBookingInfo({ params }: Props) {
 
       <h1 className='text-4xl font-bold my-7' >Enter your details</h1>
 
-      <form className='grid grid-cols-1 gap-3 ' action="">
-        <input type="text" name='first_name'  placeholder='First Name'/>
-        <input type="text" name='last_name' placeholder='Last Name'/>
-        <input type="tel" name='phone_number' placeholder='Phone Number'/>
-        <FormButton>Submit Booking</FormButton>
-      </form>
+      <BookingForm officeId={office.id} />
     </div>
   )
 }
