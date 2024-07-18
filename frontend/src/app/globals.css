@@ -28,3 +28,27 @@ form > button {
   padding: 10px;
 
 }
+
+table {
+  width: 100%;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+td {
+  padding: 10px;tr:nth-child(even) {background-color: #f2f2f2;}
+
+}
+
+td, tr {
+  border : solid;
+  text-align: left;
+  border-width: 2px;
+  border-color: rgb(228, 228, 228);
+  font-size: 20px;
+}
+
+thead {
+  background-color: rgb(228, 228, 228);
+  color: rgb(117, 117, 117);
+}

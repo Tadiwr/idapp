@@ -1,3 +1,5 @@
+"use server";
+
 import { Booking, GetBookingInfoResult, MakeBookingDTO } from "./types";
 import { getBookingsApiBaseUrl } from "./utils";
 
@@ -45,4 +47,14 @@ export async function getBookingInfo(bookingCode: string) : Promise<GetBookingIn
     });
 
     return await res.json() as GetBookingInfoResult;
+}
+
+export async function getAllBookings() {
+    const baseUrl = getBookingsApiBaseUrl();
+    const reqUrl = `${baseUrl}/all`;
+
+    const res = await fetch(reqUrl);
+
+    return await res.json() as Booking[];
+
 }
