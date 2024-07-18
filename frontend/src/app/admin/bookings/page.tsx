@@ -12,6 +12,7 @@ export default async function AdminBookings() {
             <table className='mt-10' >
                 <thead>
                     <tr>
+                        <td>Code</td>
                         <td>First Name</td>
                         <td>Last Name</td>
                         <td>Booking Date</td>
@@ -23,6 +24,7 @@ export default async function AdminBookings() {
                 <tbody>
                     {bookings.map((booking, index) => {
                         return <tr>
+                            <td>{booking.code}</td>
                             <td>{booking.firstName}</td>
                             <td>{booking.lastName}</td>
                             <td>{booking.date.toString()}</td>
