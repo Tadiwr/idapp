@@ -18,6 +18,19 @@ export function getOfficesApiBaseUrl() : string {
     return baseUrl;
 }
 
+/** Return the api base url for the stats feature
+ * Its in the format
+ * 
+ * `<server-address>/api/stats`
+ * 
+ */
+export function getStatsApiBaseUrl() : string {
+    const serverAddress = getIpAddress();
+    const baseUrl = `${serverAddress}/api/stats`;
+
+    return baseUrl;
+}
+
 /** Return the api base url for the bookings feature
  * Its in the format
  * 

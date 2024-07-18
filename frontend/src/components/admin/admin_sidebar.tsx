@@ -36,7 +36,7 @@ export default function AdminSidebar() {
         
         <div className='mt-20 flex flex-col text-xl  font-medium items-start' >
             {sidebarItems.map((item, index) => {
-                return <SideBarItem title={item.title} href={item.href} /> 
+                return <SideBarItem key={index} title={item.title} href={item.href} /> 
             })}
         </div>
     </div>

@@ -23,4 +23,9 @@ export type Booking = MakeBookingDTO & {
 export type GetBookingInfoResult = {
     booking: Booking
     isValid: boolean
-  }
+}
+
+export type SummaryStats = {
+    bookingCount: number,
+    officeCount: number
+}
