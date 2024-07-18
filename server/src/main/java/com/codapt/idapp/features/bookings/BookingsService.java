@@ -1,5 +1,6 @@
 package com.codapt.idapp.features.bookings;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -82,6 +83,18 @@ public class BookingsService {
 
     public Optional<Booking> getById(int id) {
         return repo.findById(1L * id);
+    }
+
+    public Long countAll() {
+        return  repo.count();
+    }
+
+    public List<Booking> getAllForDate(LocalDate date) {
+        return repo.findByDate(date);
+    }
+
+    public List<Booking> getAllForToday(LocalDate date) {
+        return repo.findByDate(LocalDate.now());
     }
 
 

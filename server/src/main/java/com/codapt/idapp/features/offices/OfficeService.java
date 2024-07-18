@@ -34,4 +34,8 @@ public class OfficeService {
     public List<Office> getAll() {
         return  (List<Office>) repo.findAll();
     }
+
+    public Long countAll() {
+        return repo.count();
+    }
 }
