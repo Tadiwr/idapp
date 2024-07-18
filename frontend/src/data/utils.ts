@@ -35,9 +35,10 @@ export function getBookingsApiBaseUrl() : string {
  * 
  * `day day-number month year`
  */
+
 export function formatDate(olddate: Date) {
     const date = new Date(olddate.toString());
-    
+
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     const dayIndex = date.getDay();
     const dayStr = daysOfWeek[dayIndex];
